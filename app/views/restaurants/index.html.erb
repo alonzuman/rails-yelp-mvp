@@ -1,9 +1,13 @@
-<ul>
-<% @restaurants.each do |restaurant| %>
-  <%= link_to restaurant_path(restaurant) do %>
-    <h2><%= restaurant.name %></h2>
-    <p><%= restaurant.category %></p>
-    <p><%= restaurant.address %></p>
+<div class="container">
+  <ul>
+  <% @restaurants.each do |restaurant| %>
+    <div class="restaurant-card">
+      <%= link_to restaurant_path(restaurant) do %>
+        <h2><%= restaurant.name %></h2>
+        <p><%= restaurant.category %></p>
+        <p><%= restaurant.address %></p>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-</ul>
+  </ul>
+</div>

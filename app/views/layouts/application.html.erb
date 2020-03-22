@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsYelpMvp</title>
+    <title>What Yelp would've looked like if it sucked even more</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,10 +11,22 @@
 
   <body>
     <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "New Restaurant", new_restaurant_path %>
+      <div class="navbar-container">
+        <div class="navbar-element">
+          <%= link_to "Home", root_path, class:"logo" %>
+        </div>
+        <div class="navbar-element">
+          <%= link_to "Add Restaurant", new_restaurant_path, class:"button-primary" %>
+        </div>
+      </div>
     </nav>
 
     <%= yield %>
+
+    <footer>
+      <div class="footer-content">
+        <h4>@made with <3 by Alonz</h4>
+      </div>
+    </footer>
   </body>
 </html>

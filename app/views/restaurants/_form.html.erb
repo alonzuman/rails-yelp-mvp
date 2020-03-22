@@ -1,7 +1,14 @@
-<%= form_for(@restaurant) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :category %>
-  <%= f.text_field :address %>
-  <%= f.number_field :address %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+<h1>Add a new restaurant</h1>
+  <%= form_for(@restaurant) do |f| %>
+      <p>Title</p>
+      <%= f.text_field :name, class:"input-field" %>
+      <p>Category</p>
+      <%= f.text_field :category, class:"input-field" %>
+      <p>Address</p>
+      <%= f.text_field :address, class:"input-field" %>
+      <p>Phone number</p>
+      <%= f.number_field :address, class:"input-field"%>
+    <%= f.submit class:"button-primary"%>
+  <% end %>
+</div>

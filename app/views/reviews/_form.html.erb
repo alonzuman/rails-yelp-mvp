@@ -1,5 +1,10 @@
-<%= form_for([@restaurant, @review]) do |f| %>
-  <%= f.text_field :content %>
-  <%= f.number_field :rating %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+  <%= form_for([@restaurant, @review]) do |f| %>
+    <h1>Add a review</h1>
+      <p>Content</p>
+      <%= f.text_field :content, class:"input-field" %>
+      <p>Rating</p>
+      <%= f.number_field :rating, class:"input-field" %>
+      <%= f.submit "Submit Review", class:"button-primary" %>
+  <% end %>
+</div>
