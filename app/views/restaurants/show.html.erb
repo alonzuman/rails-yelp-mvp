@@ -2,4 +2,13 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.category %></p>
 <p><%= @restaurant.phone_number %></p>
+
+<% @restaurant.reviews.each do |review| %>
+  <div class="review-card">
+    <p><%= review.content %></p>
+    <p><%= review.rating %></p>
+  </div>
+<% end %>
+
 <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
+<%= link_to "Add review", new_restaurant_review_path(@restaurant, @review) %>
