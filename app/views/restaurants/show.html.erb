@@ -8,12 +8,20 @@
 
     <% @restaurant.reviews.each do |review| %>
       <div class="review-card">
-        <p><%= review.content %></p>
-        <p><%= review.rating %></p>
+        <div class="review-content">
+          <p><%= review.content %></p>
+          <p><%= review.rating %></p>
+        </div>
+        <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <div class="button-small">
+            <i class="fas fa-trash"></i>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 
   <%= link_to "Edit", edit_restaurant_path(@restaurant), class:"button-secondary" %>
+  <%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" }, class:"button-secondary" %>
   <%= link_to "Add review", new_restaurant_review_path(@restaurant, @review), class:"button-primary" %>
 </div>

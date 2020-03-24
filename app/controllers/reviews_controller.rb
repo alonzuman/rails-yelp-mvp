@@ -32,9 +32,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @restaurant = @review.restaurant
     @review.destroy
 
-    redirect_to root_path
+    redirect_to restaurant_path(@restaurant)
   end
 
   private
